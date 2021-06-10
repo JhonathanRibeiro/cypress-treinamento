@@ -1,0 +1,24 @@
+{
+    "name": "modelo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "cy:run": "cypress run --config video=false --env allure=true",
+        "allure:generate": "allure generate allure-results",
+        "allure:open": "allure open allure-report",
+        "allure:clear": "rm -r allure-results/ allure-report || true",
+        "test": "npx npm-run-all allure:clear cy:run allure:generate"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@shelex/cypress-allure-plugin": "^2.6.0",
+        "cypress": "^7.2.0",
+        "cypress-xpath": "^1.6.2"
+    },
+    "dependencies": {
+        "allure": "0.0.0"
+    }
+}
